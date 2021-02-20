@@ -1,0 +1,46 @@
+# Задание №1
+
+duration = int(input("Введите число: "))
+
+sec = (duration % 60)
+minutes = (duration // 60) % 60
+hours = (duration // 3600) % 24
+days = (duration // 86400)
+print(days, "дн", hours, "ч", minutes, "мин", sec, "сек")
+
+
+
+#Задание №2
+#К сожелению  я так и не смогла в нем разобраться, даже посмотрев разбор. Буду дальше пробовать.
+
+new_list = []
+s_num = 0
+
+for i in range (1, 1001, 2):
+    new_list.append(i ** 3)
+
+for i in new_list:
+    num = i
+    while i > 0:
+# Далее я совсем запуталсь и не могу разобраться
+        num = num + new_list % 10
+        new_list = new_list // 10
+        s_num += new_list
+    if num % 7 == 0:
+        sum_num += num
+
+print(sum)
+
+
+
+#Задание №3
+
+percent = int(input("Введите число: "))
+
+if percent % 10 == 1 and percent % 100 != 11:
+    print(percent, "процент")
+elif 1 < percent % 10 < 5 and not 11 < percent % 100 < 15:
+    print(percent, "процента")
+else:
+    print(percent, "процентов")
+
