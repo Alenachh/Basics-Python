@@ -1,0 +1,51 @@
+#______________________ 1 задание _______________________
+
+translate = input("Напишите число от нуля до десяти на англ: ")
+
+number = {
+    "zero": "ноль", "one": "один", "two": "два", "three": "три", "four": "четыре", "five": "пять",
+    "six": "шесть","seven": "семь", "eight": "восемь", "nine": "девять", "ten": "десять",
+}
+
+# ____Вариант без функции____
+# print(number[translate])
+
+# ____Вариант с функцией____
+def num_translate(words):
+    if words in number:
+        return number[words]
+
+print(num_translate(translate))
+
+
+#______________________ 3 задание _______________________
+
+def thesaurus(*args):
+    final = {}
+    for name in args:
+        first_letter = name[0]
+        if first_letter not in final:
+            final[first_letter] = [name]
+        else:
+            final[first_letter].append(name)
+        print(final)
+
+thesaurus("Иван", "Мария", "Петр", "Илья", "Игорь", "Марина")
+
+
+#______________________ 5 задание _______________________
+
+from random import choice
+
+nouns = ["автомобиль", "лес", "огонь", "город", "дом"]
+adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью"]
+adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"]
+
+def get_jokes(n):
+    jokes = []
+    full = [nouns, adverbs, adjectives]
+    for i in range(n):
+        jokes = list(map(choice, full))
+    print(jokes)
+
+get_jokes(2)
